@@ -1,0 +1,12 @@
+{% extends 'admin/base_site.html' %}
+
+{% block title %}Статистика{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Логи" id="floatingTextarea2" style="height: 400px;width: 500px;">{{ log }}</textarea>
+            <label for="floatingTextarea2">Логи</label>
+        </div>
+    </div>
+{% endblock %}

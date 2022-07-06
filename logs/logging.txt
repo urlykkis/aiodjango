@@ -1,0 +1,9 @@
+UID: 1046227957 - Message: /startUID: 1046227957 - Message: /start
+UID: 1046227957 - Message: /start
+UID: 1618295596 - Message: /start
+UID: 1618295596 - Message: /start
+UID: 1618295596 - Message: /start
+UID: 1618295596 - Call: profile
+UID: 1618295596 - Call: back
+UID: 1046227957 - Call: profile
+UID: 1046227957 - Call: back

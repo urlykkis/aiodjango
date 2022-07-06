@@ -1,0 +1,37 @@
+{% extends 'admin/base_site.html' %}
+
+{% block title %}Статистика{% endblock %}
+
+{% block content %}
+    <div class="content" style="font-family: arial, sans-serif; height: 100px;">
+        <h1>Статистика по боту</h1>
+        <div class="text">
+            <a href="#">Количество пользователей: </a>
+            <td>{{ total_users}}</td>
+        </div>
+        <div class="text">
+            <a href="#">Количество администраторов: </a>
+            <td>{{ total_admins }}</td>
+        </div>
+        <div class="text">
+            <a href="#">Количество Забаненных: </a>
+            <td>{{ total_blocked }}</td>
+        </div>
+        <div class="text">
+            <a href="#">Количество пользователей с блокировкой рекламы: </a>
+            <td>{{ total_noads }}</td>
+        </div>
+        <div class="text">
+            <a href="#">Новые пользователей за сегодня: </a>
+            <td>{{ new_users_today }}</td>
+        </div>
+        <div class="text">
+            <a href="#">Новые пользователей за неделю: </a>
+            <td>{{ new_users_week }}</td>
+        </div>
+        <div class="text">
+            <a href="#">Новые пользователей за месяц: </a>
+            <td>{{ new_users_month }}</td>
+        </div>
+    </div>
+{% endblock %}

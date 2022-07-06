@@ -1,0 +1,90 @@
+{% extends 'admin/base_site.html' %}
+
+{% block title %}Управление{% endblock %}
+
+{% block content %}
+    <table>
+    <div class="content">
+        <h1>Управление ботом</h1>
+
+        <div class="row row-cols-1 row-cols-lg-4 g-5 g-lg-5">
+
+            <div class="col">
+            <form action="mailing" method="POST" id="mailingText" class="p-4">
+                {% csrf_token %}
+                <blockquote>Отправить рассылку</blockquote>
+                <input name="text" class="form-control col-md-10" placeholder="Текст">
+                <button class="col-6 btn btn-light" type="submit">Отправить</button>
+            </form>
+            </div>
+
+
+            <div class="col">
+            <form action="makeadmin" method="POST" id="giveAdmin" class="p-4">
+                {% csrf_token %}
+                <blockquote>Выдать админ-права</blockquote>
+                <input name="userId" class="form-control col-md-10" placeholder="Айди юзера">
+                <button class="col-6 btn btn-light" type="submit">Выдать</button>
+            </form>
+            </div>
+
+
+            <div class="col">
+            <form action="ban" method="POST" id="banUser" class="p-4">
+                {% csrf_token %}
+                <blockquote>Забанить юзера</blockquote>
+                <input name="userId" class="form-control col-md-10" placeholder="Айди юзера">
+                <button class="col-6 btn btn-light" type="submit">Забанить</button>
+            </form>
+            </div>
+
+            <div class="col">
+            <form action="unban" method="POST" id="unbanUser" class="p-4">
+                {% csrf_token %}
+                <blockquote>Разбанить юзера</blockquote>
+                <input name="userId" class="form-control col-md-10" placeholder="Айди юзера">
+                <button class="col-6 btn btn-light" type="submit">Разбанить</button>
+            </form>
+            </div>
+
+            <div class="col">
+            <form action="message" method="POST" id="mailUser" class="p-4" enctype="multipart/form-data">
+                {% csrf_token %}
+                <blockquote>Сообщение юзеру</blockquote>
+                <input name="userId" class="form-control col-md-10" placeholder="Айди юзера">
+                <input name="text" class="form-control col-md-10" placeholder="Текст">
+                <input name="photo" type="file" multiple accept="image/*,image/jpeg">
+                <button class="col-6 btn btn-light gap-3" type="submit" id="liveAlertBtn">Отправить</button>
+            </form>
+            </div>
+        </div>
+
+        <h3>Действия с ботом</h3>
+        <div class="container" style="position: absolute;">
+                <div class="row">
+                <div>
+                    <form action="restart" method="POST" class="p-4">
+                        {% csrf_token %}
+                        <button class="col-6 btn btn-light" type="submit">Рестарт бота</button>
+                    </form></div>
+                <div class="row">
+                    <div>
+                        <form action="shutdown" method="POST" class="p-4">
+                            {% csrf_token %}
+                            <button class="col-6 btn btn-light" type="submit">Выключить бота</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                <div>
+                    <form action="startup" method="POST" class="p-4">
+                        {% csrf_token %}
+                        <button class="col-6 .col-sm-3 btn btn-light" type="submit">Запустить бота</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </table>
+{% endblock %}

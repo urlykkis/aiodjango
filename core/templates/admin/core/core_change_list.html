@@ -1,0 +1,36 @@
+{% extends 'admin/change_list.html' %}
+{% block object-tools %}
+    {% block content_title  %}
+    {% endblock %}
+
+    {% block result_list %}
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="text"><a href="#">Username</a></div>
+                        </th>
+                        <th>
+                            <div class="text">
+                                <a href="#">Email</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="text"><a href="#">Date Joined</a></div>
+                        </th>
+                        <th>
+                            <div class="text"><a href="#">Telegram ID</a></div>
+                        </th>
+                    </tr>
+                </thead>
+                    {% for row in summary %}
+                        <td>{{ row.username }}</td>
+                        <td>{{ row.email }}</td>
+                        <td>{{ row.date_joined }}</td>
+                        <td>{{ row.telegram_id }}</td>
+                    {% endfor %}
+            </table>
+        </div>
+    {% endblock %}
+{% endblock %}
